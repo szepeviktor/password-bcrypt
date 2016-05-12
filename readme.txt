@@ -30,7 +30,7 @@ for more background on this plugin and the password hashing issue.
 
 == Frequently Asked Questions ==
 
-=== Manual installation as a must-use plugin ===
+= Manual installation as a must-use plugin =
 
 If you don't use Composer, you can manually copy `wp-password-bcrypt.php` into your `mu-plugins` folder.
 
