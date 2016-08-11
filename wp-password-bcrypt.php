@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Password bcrypt
- * Version:     1.0.2
+ * Version:     1.0.3
  * Description: Replaces wp_hash_password and wp_check_password with PHP 5.5's password_hash and password_verify.
  * Plugin URI:  https://roots.io
  * Licence:     MIT
@@ -15,7 +15,11 @@ if ( ! function_exists( 'add_filter' ) ) {
     exit();
 }
 
-if ( version_compare( phpversion(), '5.5', '>=' ) ) :
+if ( version_compare( phpversion(), '5.5', '>=' )
+    && ! function_exists( 'wp_check_password' )
+    && ! function_exists( 'wp_hash_password' )
+    && ! function_exists( 'wp_set_password' )
+) :
 
 define( 'WP_OLD_HASH_PREFIX', '$P$' );
 
