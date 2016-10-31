@@ -1,0 +1,8 @@
+dist: trusty
+sudo: false
+
+language: php
+
+install: composer install
+
+script: composer test
