@@ -12,10 +12,8 @@
     "wp-coding-standards/wpcs": "*"
   },
   "scripts": {
-    "post-install-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
-    "post-install-cmd": "vendor/bin/phpcs --config-set default_standard WordPress",
-    "post-update-cmd" : "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
-    "post-update-cmd" : "vendor/bin/phpcs --config-set default_standard WordPress",
+    "post-install-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; vendor/bin/phpcs --config-set default_standard WordPress",
+    "post-update-cmd" : "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; vendor/bin/phpcs --config-set default_standard WordPress",
     "test": "vendor/bin/phpcs --ignore='*/vendor/*' ."
   }
 }
