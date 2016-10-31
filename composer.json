@@ -1,0 +1,19 @@
+{
+  "name": "szepeviktor/password-bcrypt",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Viktor Szépe",
+      "email": "viktor@szepe.net"
+    }
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "wp-coding-standards/wpcs": "*"
+  },
+  "scripts": {
+    "post-install-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; vendor/bin/phpcs --config-set default_standard WordPress",
+    "post-update-cmd" : "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs; vendor/bin/phpcs --config-set default_standard WordPress",
+    "test": "vendor/bin/phpcs --ignore='*/vendor/*' ."
+  }
+}
